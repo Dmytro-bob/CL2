@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Приклад скрипту для вспливаючого меню</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#menu li').hover(function() {
+            $('ul', this).stop().slideDown(200);
+        }, function() {
+            $('ul', this).stop().slideUp(200);
+        });
+    });
+  </script>
+  <style type="text/css">
+    /* Сховати всі підменю по замовчуванню */
+    #menu ul {
+      display: none;
+    }
+
+    /* Стилізація для прикладу */
+    #menu {
+      background-color: #ccc;
+      padding: 10px;
+    }
+
+    #menu li {
+      display: inline-block;
+      padding: 10px;
+      position: relative;
+    }
+
+    #menu li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="#">Елемент 1</a>
+      <ul>
+        <li><a href="#">Підменю 1.1</a></li>
+        <li><a href="#">Підменю 1.2</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Елемент 2</a>
+      <ul>
+        <li><a href="#">Підменю 2.1</a></li>
+        <li><a href="#">Підменю 2.2</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Елемент 3</a>
+      <ul>
+        <li><a href="#">Підменю 3.1</a></li>
+        <li><a href="#">Підменю 3.2</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
